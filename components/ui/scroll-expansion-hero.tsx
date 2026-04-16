@@ -8,7 +8,6 @@ interface ScrollExpandHeroProps {
   mediaSrc: string;
   bgImageSrc: string;
   bgVideoSrc?: string;
-  bgVideoPosterSrc?: string;
   titleTop: string;
   titleBottom: string;
   eyebrow?: string;
@@ -20,7 +19,6 @@ export default function ScrollExpandHero({
   mediaSrc,
   bgImageSrc,
   bgVideoSrc,
-  bgVideoPosterSrc,
   titleTop,
   titleBottom,
   eyebrow,
@@ -32,10 +30,8 @@ export default function ScrollExpandHero({
   const [mediaFullyExpanded, setMediaFullyExpanded] = useState(false);
   const [touchStartY, setTouchStartY] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const [isBackgroundVideoPlaying, setIsBackgroundVideoPlaying] = useState(false);
 
   const sectionRef = useRef<HTMLDivElement>(null);
-  const backgroundVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -47,35 +43,6 @@ export default function ScrollExpandHero({
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-
-  useEffect(() => {
-    const video = backgroundVideoRef.current;
-    if (!video || !bgVideoSrc) return;
-
-    video.muted = true;
-    video.defaultMuted = true;
-    video.playsInline = true;
-
-    const playVideo = () => {
-      void video.play().catch(() => {
-        // The poster keeps the hero from going black if a browser delays autoplay.
-      });
-    };
-
-    video.load();
-    playVideo();
-    const handlePlaying = () => setIsBackgroundVideoPlaying(true);
-
-    video.addEventListener('canplay', playVideo);
-    video.addEventListener('loadeddata', playVideo);
-    video.addEventListener('playing', handlePlaying);
-
-    return () => {
-      video.removeEventListener('canplay', playVideo);
-      video.removeEventListener('loadeddata', playVideo);
-      video.removeEventListener('playing', handlePlaying);
-    };
-  }, [bgVideoSrc]);
 
   useEffect(() => {
     const handleWheel = (e: Event) => {
@@ -168,15 +135,16 @@ export default function ScrollExpandHero({
             className="absolute inset-0 z-0 bg-[#11100e]"
             style={{ opacity: bgOpacity }}
           >
-            {bgVideoSrc && bgVideoPosterSrc ? (
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `url(${bgVideoPosterSrc})`,
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'contain',
-                }}
+            {bgVideoSrc ? (
+              <video
+                key={bgVideoSrc}
+                className="absolute inset-0 h-full w-full object-contain object-center"
+                src={bgVideoSrc}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
                 aria-hidden="true"
               />
             ) : (
@@ -189,28 +157,11 @@ export default function ScrollExpandHero({
                 sizes="100vw"
               />
             )}
-            {bgVideoSrc && (
-              <>
-                <video
-                  ref={backgroundVideoRef}
-                  key={bgVideoSrc}
-                  className="absolute inset-0 h-full w-full object-contain object-center transition-opacity duration-700"
-                  src={bgVideoSrc}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  aria-hidden="true"
-                  style={{ opacity: isBackgroundVideoPlaying ? 1 : 0 }}
-                />
-              </>
-            )}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  'linear-gradient(180deg, rgba(245,241,232,0.02) 0%, rgba(245,241,232,0.08) 100%)',
+                  'linear-gradient(180deg, rgba(245,241,232,0.04) 0%, rgba(245,241,232,0.14) 100%)',
               }}
             />
           </div>
