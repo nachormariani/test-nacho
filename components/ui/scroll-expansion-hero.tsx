@@ -145,7 +145,7 @@ export default function ScrollExpandHero({
             />
             {bgVideoSrc && (
               <video
-                className="absolute inset-0 h-full w-full object-cover object-center"
+                className="absolute inset-0 h-full w-full object-contain object-center bg-[#1f1c18]"
                 autoPlay
                 muted
                 loop
