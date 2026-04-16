@@ -12,8 +12,8 @@ export function Gallery({ data }: Props) {
     <section className="px-0 py-20 md:py-32">
       <InteractiveBentoGallery
         mediaItems={data}
-        title="Fotos y videos"
-        description="Pedacitos nuestros, elegidos con criterio para que respiren lindo."
+        title="Fotos"
+        description="Pedacitos nuestros, elegidos para que respiren lindo."
       />
     </section>
   );
