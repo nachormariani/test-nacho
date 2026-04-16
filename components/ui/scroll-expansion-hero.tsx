@@ -132,37 +132,36 @@ export default function ScrollExpandHero({
 
           {/* Background media */}
           <div
-            className="absolute inset-0 z-0 bg-[#171411]"
+            className="absolute inset-0 z-0 bg-[#11100e]"
             style={{ opacity: bgOpacity }}
           >
-            <Image
-              src={bgImageSrc}
-              alt=""
-              fill
-              priority
-              className="object-cover object-center"
-              sizes="100vw"
-              style={{ opacity: bgVideoSrc ? 0.18 : 1 }}
-            />
-            {bgVideoSrc && (
+            {bgVideoSrc ? (
               <video
+                key={bgVideoSrc}
                 className="absolute inset-0 h-full w-full object-contain object-center"
+                src={bgVideoSrc}
                 autoPlay
                 muted
                 loop
                 playsInline
                 preload="auto"
                 aria-hidden="true"
-                style={{ transform: 'scale(0.78)' }}
-              >
-                <source src={bgVideoSrc} type="video/mp4" />
-              </video>
+              />
+            ) : (
+              <Image
+                src={bgImageSrc}
+                alt=""
+                fill
+                priority
+                className="object-cover object-center"
+                sizes="100vw"
+              />
             )}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  'linear-gradient(180deg, rgba(245,241,232,0.18) 0%, rgba(245,241,232,0.48) 100%)',
+                  'linear-gradient(180deg, rgba(245,241,232,0.04) 0%, rgba(245,241,232,0.14) 100%)',
               }}
             />
           </div>
