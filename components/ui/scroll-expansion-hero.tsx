@@ -32,9 +32,6 @@ export default function ScrollExpandHero({
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setScrollProgress(0);
-    setShowContent(false);
-    setMediaFullyExpanded(false);
     window.scrollTo(0, 0);
   }, []);
 

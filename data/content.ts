@@ -14,19 +14,14 @@ export interface IntroContent {
   paragraph: string;
 }
 
-export interface TimelineItem {
-  id: string;
-  label: string;   // "El comienzo", "Un viaje", etc.
-  title: string;
-  description: string;
-}
-
 export interface GalleryItem {
-  id: string;
-  src: string;
-  alt: string;
-  caption: string;
-  span?: boolean;
+  id: number;
+  type: "image" | "video";
+  title: string;
+  desc: string;
+  url: string;
+  span: string;
+  mimeType?: string;
 }
 
 export interface BonusOption {
@@ -62,72 +57,55 @@ export const content = {
       "No quería solo comprarte una cosa y ya. Quería hacer algo que se sintiera pensado de verdad, algo tuyo. Esta página es parte de esa sorpresa: recuerdos, planes y al final una última cosa que podés elegir vos. Porque sos de las personas que merecen que se les preste atención.",
   } as IntroContent,
 
-  timeline: [
-    {
-      id: "t1",
-      label: "El comienzo",
-      title: "Cuando todo empezó",
-      description:
-        "Hay momentos que quedan guardados sin hacer ruido. Algunos empiezan así: simples, naturales, y después se vuelven importantes.",
-    },
-    {
-      id: "t2",
-      label: "Un viaje",
-      title: "Lejos de todo",
-      description:
-        "Los lugares cambian cuando estás vos. Todo se vuelve más fácil, más nuestro, más lindo de recordar.",
-    },
-    {
-      id: "t3",
-      label: "Un momento importante",
-      title: "Algo que cambió",
-      description:
-        "Hay días que no necesitan explicación. Uno los mira después y entiende que ahí había algo especial.",
-    },
-    {
-      id: "t4",
-      label: "Hoy",
-      title: "Acá, ahora",
-      description:
-        "Contento de estar acá, con vos, festejando a Inesita. Ojalá sean muchos más.",
-    },
-  ] as TimelineItem[],
-
   gallery: [
     {
-      id: "g1",
-      src: "/photos/salt-jump.jpg",
-      alt: "Inesita saltando en un paisaje blanco",
-      caption: "Aire, blanco y cielo enorme.",
-      span: false,
+      id: 1,
+      type: "image",
+      title: "Cielo enorme",
+      desc: "Aire, blanco y ese día que parece de otro planeta.",
+      url: "/photos/salt-jump.jpg",
+      span: "md:col-span-2 md:row-span-3 sm:col-span-2 sm:row-span-3",
     },
     {
-      id: "g2",
-      src: "/photos/beach-hug.jpg",
-      alt: "Inesita y Nacho abrazados en la playa",
-      caption: "Un recuerdo simple de esos que quedan.",
-      span: true,
+      id: 2,
+      type: "video",
+      title: "Un video nuestro",
+      desc: "Un pedacito de movimiento para que la página respire un poco más.",
+      url: "/videos/recuerdo.mov",
+      span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-3",
+      mimeType: "video/quicktime",
     },
     {
-      id: "g3",
-      src: "/photos/garden-evening.jpg",
-      alt: "Inesita y Nacho en un jardín al atardecer",
-      caption: "Verde, madera, noche linda.",
-      span: false,
+      id: 3,
+      type: "image",
+      title: "Playa",
+      desc: "Un recuerdo simple de esos que quedan.",
+      url: "/photos/beach-hug.jpg",
+      span: "md:col-span-1 md:row-span-2 sm:col-span-1 sm:row-span-2",
     },
     {
-      id: "g4",
-      src: "/photos/selfie-sky.jpg",
-      alt: "Inesita y Nacho en una selfie con cielo de fondo",
-      caption: "Caras de estar bien.",
-      span: false,
+      id: 4,
+      type: "image",
+      title: "Atardecer",
+      desc: "Verde, madera y noche linda.",
+      url: "/photos/garden-evening.jpg",
+      span: "md:col-span-1 md:row-span-2 sm:col-span-2 sm:row-span-2",
     },
     {
-      id: "g5",
-      src: "/photos/train-selfie.jpg",
-      alt: "Inesita y Nacho en un tren",
-      caption: "Hasta lo cotidiano tiene su gracia.",
-      span: false,
+      id: 5,
+      type: "image",
+      title: "Caras de estar bien",
+      desc: "Una foto fácil, sin mucha explicación.",
+      url: "/photos/selfie-sky.jpg",
+      span: "md:col-span-2 md:row-span-2 sm:col-span-2 sm:row-span-2",
+    },
+    {
+      id: 6,
+      type: "image",
+      title: "En camino",
+      desc: "Hasta lo cotidiano tiene su gracia.",
+      url: "/photos/train-selfie.jpg",
+      span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
     },
   ] as GalleryItem[],
 
