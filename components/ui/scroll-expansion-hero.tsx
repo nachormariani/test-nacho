@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 interface ScrollExpandHeroProps {
   mediaSrc: string;
   bgImageSrc: string;
+  bgVideoSrc?: string;
   titleTop: string;
   titleBottom: string;
   eyebrow?: string;
@@ -17,6 +18,7 @@ interface ScrollExpandHeroProps {
 export default function ScrollExpandHero({
   mediaSrc,
   bgImageSrc,
+  bgVideoSrc,
   titleTop,
   titleBottom,
   eyebrow,
@@ -128,7 +130,7 @@ export default function ScrollExpandHero({
       <section className="relative flex flex-col items-center justify-start min-h-[100dvh]">
         <div className="relative w-full flex flex-col items-center min-h-[100dvh]">
 
-          {/* Background image */}
+          {/* Background media */}
           <div
             className="absolute inset-0 z-0"
             style={{ opacity: bgOpacity }}
@@ -141,11 +143,24 @@ export default function ScrollExpandHero({
               className="object-cover object-center"
               sizes="100vw"
             />
+            {bgVideoSrc && (
+              <video
+                className="absolute inset-0 h-full w-full object-cover object-center"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-hidden="true"
+              >
+                <source src={bgVideoSrc} type="video/mp4" />
+              </video>
+            )}
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  'linear-gradient(180deg, rgba(245,241,232,0.22) 0%, rgba(245,241,232,0.50) 100%)',
+                  'linear-gradient(180deg, rgba(245,241,232,0.18) 0%, rgba(245,241,232,0.48) 100%)',
               }}
             />
           </div>

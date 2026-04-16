@@ -11,6 +11,7 @@ export default function Page() {
       <ScrollExpandHero
         mediaSrc="/photos/beach-hug.jpg"
         bgImageSrc="/photos/salt-jump.jpg"
+        bgVideoSrc="/videos/kling-hero.mp4"
         titleTop="Feliz cumpleaños,"
         titleBottom="Inesita."
         eyebrow="16 de abril"
