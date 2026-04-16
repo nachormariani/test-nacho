@@ -132,7 +132,7 @@ export default function ScrollExpandHero({
 
           {/* Background media */}
           <div
-            className="absolute inset-0 z-0"
+            className="absolute top-0 left-0 right-0 h-[100dvh] z-0"
             style={{ opacity: bgOpacity }}
           >
             <Image
@@ -145,7 +145,7 @@ export default function ScrollExpandHero({
             />
             {bgVideoSrc && (
               <video
-                className="absolute inset-0 h-full w-full object-contain object-center bg-[#1f1c18]"
+                className="absolute inset-0 h-full w-full object-contain object-center"
                 autoPlay
                 muted
                 loop
