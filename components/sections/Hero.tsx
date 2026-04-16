@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { heroStagger, fadeInUp, fadeIn } from "@/lib/variants";
 import type { HeroContent } from "@/data/content";
 
@@ -11,12 +12,19 @@ interface Props {
 export function Hero({ data }: Props) {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
-      {/* Subtle radial gradient background */}
+      <Image
+        src={data.image}
+        alt="Inesita y Nacho abrazados frente al mar"
+        fill
+        priority
+        className="object-cover"
+        sizes="100vw"
+      />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,168,130,0.06) 0%, transparent 70%)",
+            "linear-gradient(180deg, rgba(251,250,245,0.68) 0%, rgba(245,241,232,0.76) 52%, rgba(245,241,232,0.96) 100%)",
         }}
         aria-hidden="true"
       />
@@ -35,7 +43,7 @@ export function Hero({ data }: Props) {
         {/* Main title */}
         <motion.h1
           variants={fadeInUp}
-          className="font-serif text-cream leading-[1.05] tracking-[-0.02em] mb-6"
+          className="font-serif text-cream leading-[1.05] mb-6"
           style={{ fontSize: "clamp(3rem, 8vw, 6.5rem)" }}
         >
           {data.title}
@@ -54,8 +62,7 @@ export function Hero({ data }: Props) {
         <motion.div variants={fadeInUp}>
           <a
             href={data.ctaTarget}
-            className="group relative inline-flex items-center gap-3 px-8 py-4 border border-gold/40 text-cream font-sans font-light tracking-widest uppercase text-xs transition-all duration-500 hover:border-gold hover:bg-gold/8 hover:text-cream"
-            style={{ letterSpacing: "0.18em" }}
+            className="group relative inline-flex items-center gap-3 px-8 py-4 border border-cream/35 text-cream bg-background/40 font-sans font-normal uppercase text-xs transition-all duration-500 hover:border-cream hover:bg-background/70 hover:text-cream"
           >
             <span>{data.ctaLabel}</span>
             <motion.span

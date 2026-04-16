@@ -7,6 +7,7 @@ export interface HeroContent {
   subtitle: string;
   ctaLabel: string;
   ctaTarget: string;
+  image: string;
 }
 
 export interface IntroContent {
@@ -22,17 +23,10 @@ export interface TimelineItem {
 
 export interface GalleryItem {
   id: string;
-  src: string;      // Reemplazá por "/photos/1.jpg" cuando tengas las fotos reales
+  src: string;
   alt: string;
   caption: string;
-  span?: boolean;   // true = ocupa 2 columnas en la grilla
-}
-
-export interface QualityItem {
-  id: string;
-  number: string;   // "01" – "06"
-  title: string;
-  description: string;
+  span?: boolean;
 }
 
 export interface BonusOption {
@@ -56,15 +50,16 @@ export interface ClosingContent {
 
 export const content = {
   hero: {
-    title: "Feliz cumpleaños, amor",
-    subtitle: "Te armé algo chiquito, pero muy pensado para vos.",
+    title: "Feliz cumpleaños, Inesita",
+    subtitle: "Te armé algo simple, lindo y muy pensado para vos.",
     ctaLabel: "Abrir sorpresa",
     ctaTarget: "#intro",
+    image: "/photos/beach-hug.jpg",
   } as HeroContent,
 
   intro: {
     paragraph:
-      "No quería solo comprarte una cosa y ya. Quería hacer algo que se sintiera pensado de verdad, algo tuyo. Esta página es parte de esa sorpresa: unos regalos, unos recuerdos, y al final una última cosa que podés elegir vos. Porque sos de las personas que merecen que se les preste atención.",
+      "No quería solo comprarte una cosa y ya. Quería hacer algo que se sintiera pensado de verdad, algo tuyo. Esta página es parte de esa sorpresa: recuerdos, planes y al final una última cosa que podés elegir vos. Porque sos de las personas que merecen que se les preste atención.",
   } as IntroContent,
 
   timeline: [
@@ -73,117 +68,68 @@ export const content = {
       label: "El comienzo",
       title: "Cuando todo empezó",
       description:
-        "Hay un momento exacto en el que uno se da cuenta. No sé si lo sabés, pero yo sí me acuerdo.",
+        "Hay momentos que quedan guardados sin hacer ruido. Algunos empiezan así: simples, naturales, y después se vuelven importantes.",
     },
     {
       id: "t2",
       label: "Un viaje",
       title: "Lejos de todo",
       description:
-        "Ese viaje donde todo fue más fácil porque estabas vos. Esas son las cosas que uno guarda.",
+        "Los lugares cambian cuando estás vos. Todo se vuelve más fácil, más nuestro, más lindo de recordar.",
     },
     {
       id: "t3",
       label: "Un momento importante",
       title: "Algo que cambió",
       description:
-        "Hay momentos que no parecen grandes pero te reordenan todo por dentro. Este fue uno de esos.",
+        "Hay días que no necesitan explicación. Uno los mira después y entiende que ahí había algo especial.",
     },
     {
       id: "t4",
       label: "Hoy",
       title: "Acá, ahora",
       description:
-        "Contento de estar acá, con vos, festejando esto. Ojalá sean muchos más.",
+        "Contento de estar acá, con vos, festejando a Inesita. Ojalá sean muchos más.",
     },
   ] as TimelineItem[],
 
-  // ──────────────────────────────────────────────────────────
-  // FOTOS — reemplazá los src por "/photos/1.jpg", "/photos/2.jpg", etc.
-  // cuando tengas las fotos reales. Las descripciones también.
-  // ──────────────────────────────────────────────────────────
   gallery: [
     {
       id: "g1",
-      src: "https://picsum.photos/seed/ine-01/800/1000",
-      alt: "Foto 1 — reemplazar",
-      caption: "Caption foto 1",
+      src: "/photos/salt-jump.jpg",
+      alt: "Inesita saltando en un paisaje blanco",
+      caption: "Aire, blanco y cielo enorme.",
       span: false,
     },
     {
       id: "g2",
-      src: "https://picsum.photos/seed/ine-02/800/600",
-      alt: "Foto 2 — reemplazar",
-      caption: "Caption foto 2",
+      src: "/photos/beach-hug.jpg",
+      alt: "Inesita y Nacho abrazados en la playa",
+      caption: "Un recuerdo simple de esos que quedan.",
       span: true,
     },
     {
       id: "g3",
-      src: "https://picsum.photos/seed/ine-03/800/900",
-      alt: "Foto 3 — reemplazar",
-      caption: "Caption foto 3",
+      src: "/photos/garden-evening.jpg",
+      alt: "Inesita y Nacho en un jardín al atardecer",
+      caption: "Verde, madera, noche linda.",
       span: false,
     },
     {
       id: "g4",
-      src: "https://picsum.photos/seed/ine-04/800/600",
-      alt: "Foto 4 — reemplazar",
-      caption: "Caption foto 4",
+      src: "/photos/selfie-sky.jpg",
+      alt: "Inesita y Nacho en una selfie con cielo de fondo",
+      caption: "Caras de estar bien.",
       span: false,
     },
     {
       id: "g5",
-      src: "https://picsum.photos/seed/ine-05/800/1000",
-      alt: "Foto 5 — reemplazar",
-      caption: "Caption foto 5",
+      src: "/photos/train-selfie.jpg",
+      alt: "Inesita y Nacho en un tren",
+      caption: "Hasta lo cotidiano tiene su gracia.",
       span: false,
     },
   ] as GalleryItem[],
-
-  qualities: [
-    {
-      id: "q1",
-      number: "01",
-      title: "Tu sensibilidad",
-      description:
-        "La forma en que percibís el mundo, las personas, los detalles. No es algo que todo el mundo tiene.",
-    },
-    {
-      id: "q2",
-      number: "02",
-      title: "Tu cabeza",
-      description:
-        "La claridad con la que pensás, la velocidad, la profundidad. Da gusto hablar con vos.",
-    },
-    {
-      id: "q3",
-      number: "03",
-      title: "Tu criterio",
-      description:
-        "Sabés lo que querés. Sabés lo que está bien. Y no cedés ante lo que no te parece.",
-    },
-    {
-      id: "q4",
-      number: "04",
-      title: "Cómo hacés las cosas",
-      description:
-        "Con cuidado, con atención, sin apuros innecesarios. Siempre bien.",
-    },
-    {
-      id: "q5",
-      number: "05",
-      title: "Tu manera de estar",
-      description:
-        "Hay personas que irradian algo especial. Vos entrás a un lugar y eso se siente.",
-    },
-    {
-      id: "q6",
-      number: "06",
-      title: "Lo que te hace únicas",
-      description:
-        "No es una sola cosa. Es todo junto. Es vos.",
-    },
-  ] as QualityItem[],
 
   // ──────────────────────────────────────────────────────────
   // BONUS — las 3 opciones de regalo para elegir
@@ -191,7 +137,7 @@ export const content = {
   bonus: [
     {
       id: "b1",
-      icon: "✈️",
+      icon: "PT",
       title: "Un look en Portugal",
       description:
         "Cuando estemos en Portugal, elegís algo de ropa que te encante. Lo que sea. Corre por mi cuenta.",
@@ -201,7 +147,7 @@ export const content = {
     },
     {
       id: "b2",
-      icon: "🎭",
+      icon: "AR",
       title: "Una noche para recordar",
       description:
         "Elegimos juntos un recital, una obra, una experiencia cultural que tengamos ganas de ver. Las entradas van por mí.",
@@ -211,7 +157,7 @@ export const content = {
     },
     {
       id: "b3",
-      icon: "☀️",
+      icon: "DIA",
       title: "Un día para vos",
       description:
         "Diseño un día entero pensado para vos: dónde ir, qué comer, qué hacer. Un plan armado con detalle, solo para vos.",
@@ -222,7 +168,7 @@ export const content = {
   ] as BonusOption[],
 
   closing: {
-    heading: "Feliz cumpleaños, Ine.",
+    heading: "Feliz cumpleaños, Inesita.",
     message:
       "Ojalá este año te traiga todo lo que merecés. Y más.",
     signature: "Con todo, Nacho",

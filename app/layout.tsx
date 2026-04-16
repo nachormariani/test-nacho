@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Feliz cumpleaños, Ine",
+  title: "Feliz cumpleaños, Inesita",
   description: "Una sorpresa pensada para vos.",
 };
 

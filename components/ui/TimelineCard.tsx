@@ -23,8 +23,8 @@ export function TimelineCard({ item, index }: Props) {
           <div className="absolute inset-0 rounded-full bg-gold/30 scale-[2.5] animate-pulse" style={{ animationDuration: "3s" }} />
         </div>
         <span
-          className="font-sans font-light text-gold tracking-widest uppercase"
-          style={{ fontSize: "0.65rem", letterSpacing: "0.22em" }}
+          className="font-sans font-light text-cream-muted uppercase"
+          style={{ fontSize: "0.72rem" }}
         >
           {item.label}
         </span>
@@ -32,7 +32,7 @@ export function TimelineCard({ item, index }: Props) {
 
       {/* Card body */}
       <div
-        className="flex-1 bg-surface border border-gold/10 rounded-sm p-6 md:p-7 transition-all duration-500 hover:border-gold/25 hover:shadow-[0_0_30px_rgba(200,168,130,0.04)]"
+        className="flex-1 bg-background/70 border border-cream/10 rounded-sm p-6 md:p-7 transition-all duration-500 hover:border-cream/25 hover:shadow-[0_20px_50px_rgba(31,28,24,0.08)]"
       >
         <h3
           className="font-serif text-cream mb-3 leading-tight"

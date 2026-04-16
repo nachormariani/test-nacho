@@ -30,7 +30,7 @@ export function Closing({ data }: Props) {
         <motion.h2
           variants={fadeInUp}
           className="font-serif text-cream leading-tight mb-8"
-          style={{ fontSize: "clamp(2.2rem, 6vw, 4.5rem)", letterSpacing: "-0.015em" }}
+          style={{ fontSize: "clamp(2.2rem, 6vw, 4.5rem)" }}
         >
           {data.heading}
         </motion.h2>
@@ -45,7 +45,7 @@ export function Closing({ data }: Props) {
 
         <motion.div variants={fadeInUp} className="flex flex-col items-center gap-3">
           <div className="gold-line" />
-          <span className="font-sans font-light text-gold tracking-widest uppercase text-xs" style={{ letterSpacing: "0.2em" }}>
+          <span className="font-sans font-light text-cream-muted uppercase text-xs">
             {data.signature}
           </span>
         </motion.div>
@@ -55,7 +55,7 @@ export function Closing({ data }: Props) {
       <div
         className="absolute inset-x-0 bottom-0 h-32 pointer-events-none"
         style={{
-          background: "linear-gradient(to top, rgba(12,11,9,0.6), transparent)",
+          background: "linear-gradient(to top, rgba(222,214,201,0.7), transparent)",
         }}
         aria-hidden="true"
       />

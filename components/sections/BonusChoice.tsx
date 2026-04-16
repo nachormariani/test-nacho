@@ -34,7 +34,7 @@ export function BonusChoice({ data }: Props) {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(200,168,130,0.04) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(216,199,106,0.16) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
@@ -47,15 +47,15 @@ export function BonusChoice({ data }: Props) {
         >
           <motion.span
             variants={fadeInUp}
-            className="font-sans font-light text-gold tracking-widest uppercase mb-4 block"
-            style={{ fontSize: "0.65rem", letterSpacing: "0.22em" }}
+            className="font-sans font-light text-cream-muted uppercase mb-4 block"
+            style={{ fontSize: "0.72rem" }}
           >
             La última sorpresa
           </motion.span>
           <motion.h2
             variants={fadeInUp}
             className="font-serif text-cream leading-tight mb-5"
-            style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.015em" }}
+            style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)" }}
           >
             Y ahora sí, te toca elegir
           </motion.h2>
@@ -113,8 +113,8 @@ export function BonusChoice({ data }: Props) {
               <motion.button
                 type="button"
                 onClick={handleConfirm}
-                className="px-8 py-3 bg-gold text-background font-sans font-light tracking-widest uppercase transition-all duration-400 hover:bg-gold/90"
-                style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "#0c0b09" }}
+                className="px-8 py-3 bg-cream text-background font-sans font-light uppercase transition-all duration-400 hover:bg-cream/90"
+                style={{ fontSize: "0.72rem" }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -140,7 +140,7 @@ export function BonusChoice({ data }: Props) {
                 <svg width="14" height="11" viewBox="0 0 14 11" fill="none" aria-hidden="true">
                   <path
                     d="M1.5 5L5.5 9L12.5 1.5"
-                    stroke="#c8a882"
+                    stroke="#8b6b4d"
                     strokeWidth="1.8"
                     strokeLinecap="round"
                     strokeLinejoin="round"

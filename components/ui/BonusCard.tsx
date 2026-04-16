@@ -27,11 +27,11 @@ export function BonusCard({ option, isSelected, isDisabled, isConfirmed, onSelec
         className="flex-1 flex flex-col p-7 md:p-8 rounded-sm border transition-colors duration-400 cursor-pointer"
         style={{
           background: isSelected
-            ? "rgba(200,168,130,0.055)"
-            : "rgba(20,18,16,0.8)",
+            ? "rgba(216,199,106,0.2)"
+            : "rgba(251,250,245,0.72)",
           borderColor: isSelected
-            ? "rgba(200,168,130,0.85)"
-            : "rgba(200,168,130,0.18)",
+            ? "rgba(139,107,77,0.55)"
+            : "rgba(31,28,24,0.12)",
         }}
         onClick={onSelect}
         whileTap={{ scale: 0.99 }}
@@ -55,7 +55,7 @@ export function BonusCard({ option, isSelected, isDisabled, isConfirmed, onSelec
                 <svg width="10" height="8" viewBox="0 0 10 8" fill="none" aria-hidden="true">
                   <path
                     d="M1 3.5L3.8 6.5L9 1"
-                    stroke="#c8a882"
+                    stroke="#8b6b4d"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -97,17 +97,16 @@ export function BonusCard({ option, isSelected, isDisabled, isConfirmed, onSelec
             e.stopPropagation();
             onSelect();
           }}
-          className="w-full py-3 border font-sans font-light tracking-widest uppercase transition-all duration-400"
+          className="w-full py-3 border font-sans font-light uppercase transition-all duration-400"
           style={{
-            fontSize: "0.65rem",
-            letterSpacing: "0.2em",
+            fontSize: "0.72rem",
             borderColor: isSelected
-              ? "rgba(200,168,130,0.8)"
-              : "rgba(200,168,130,0.25)",
-            color: isSelected ? "#c8a882" : "rgba(240,235,224,0.6)",
-            background: isSelected ? "rgba(200,168,130,0.08)" : "transparent",
+              ? "rgba(139,107,77,0.7)"
+              : "rgba(31,28,24,0.18)",
+            color: isSelected ? "#5f4632" : "rgba(31,28,24,0.62)",
+            background: isSelected ? "rgba(216,199,106,0.14)" : "transparent",
           }}
-          whileHover={!isSelected ? { borderColor: "rgba(200,168,130,0.5)", color: "rgba(240,235,224,0.9)" } : {}}
+          whileHover={!isSelected ? { borderColor: "rgba(139,107,77,0.45)", color: "rgba(31,28,24,0.9)" } : {}}
         >
           {isSelected ? "Elegida ✓" : "Elegir esta"}
         </motion.button>

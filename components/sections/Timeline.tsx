@@ -18,15 +18,15 @@ export function Timeline({ data }: Props) {
         <SectionWrapper className="flex flex-col items-center text-center mb-16 md:mb-20" stagger={0.15}>
           <motion.span
             variants={fadeInUp}
-            className="font-sans font-light text-gold tracking-widest uppercase mb-4 block"
-            style={{ fontSize: "0.65rem", letterSpacing: "0.22em" }}
+            className="font-sans font-light text-cream-muted uppercase mb-4 block"
+            style={{ fontSize: "0.72rem" }}
           >
             Historia
           </motion.span>
           <motion.h2
             variants={fadeInUp}
             className="font-serif text-cream leading-tight"
-            style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "-0.015em" }}
+            style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)" }}
           >
             Momentos
           </motion.h2>
@@ -37,7 +37,7 @@ export function Timeline({ data }: Props) {
           {/* Connecting line — horizontal on md, hidden on mobile */}
           <div
             className="hidden md:block absolute top-[7px] left-1 right-1 h-px"
-            style={{ background: "linear-gradient(to right, transparent, rgba(200,168,130,0.2), rgba(200,168,130,0.2), transparent)" }}
+            style={{ background: "linear-gradient(to right, transparent, rgba(139,107,77,0.22), rgba(216,199,106,0.28), transparent)" }}
             aria-hidden="true"
           />
 

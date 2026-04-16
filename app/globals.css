@@ -2,13 +2,13 @@
 
 @theme inline {
   /* Colors */
-  --color-background: #0c0b09;
-  --color-surface: #141210;
-  --color-surface-2: #1c1a16;
-  --color-cream: #f0ebe0;
-  --color-cream-muted: #a89e8c;
-  --color-gold: #c8a882;
-  --color-gold-dim: rgba(200, 168, 130, 0.25);
+  --color-background: #f5f1e8;
+  --color-surface: #e7e1d5;
+  --color-surface-2: #d2c5b4;
+  --color-cream: #1f1c18;
+  --color-cream-muted: #635d54;
+  --color-gold: #d8c76a;
+  --color-gold-dim: rgba(216, 199, 106, 0.28);
 
   /* Fonts */
   --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
@@ -17,12 +17,14 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #0c0b09;
+  background-color: #f5f1e8;
 }
 
 body {
-  background-color: #0c0b09;
-  color: #f0ebe0;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(216, 199, 106, 0.12), transparent 28rem),
+    linear-gradient(135deg, #fbfaf5 0%, #f5f1e8 45%, #ded6c9 100%);
+  color: #1f1c18;
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,11 +39,11 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(200, 168, 130, 0.35);
+  background: rgba(139, 107, 77, 0.35);
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(200, 168, 130, 0.6);
+  background: rgba(139, 107, 77, 0.6);
 }
 
 /* Grain overlay */
@@ -54,7 +56,7 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px 200px;
-  mix-blend-mode: overlay;
+  mix-blend-mode: multiply;
   animation: grain-shift 8s steps(10) infinite;
 }
 
@@ -76,6 +78,6 @@ body {
 .gold-line {
   width: 40px;
   height: 1px;
-  background-color: #c8a882;
-  opacity: 0.6;
+  background-color: #8b6b4d;
+  opacity: 0.55;
 }
