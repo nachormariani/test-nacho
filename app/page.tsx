@@ -1,6 +1,7 @@
 import ScrollExpandHero from "@/components/ui/scroll-expansion-hero";
 import { Intro } from "@/components/sections/Intro";
 import { Gallery } from "@/components/sections/Gallery";
+import { Gifts } from "@/components/sections/Gifts";
 import { BonusChoice } from "@/components/sections/BonusChoice";
 import { Closing } from "@/components/sections/Closing";
 import { content } from "@/data/content";
@@ -20,6 +21,7 @@ export default function Page() {
         <div id="intro">
           <Intro data={content.intro} />
           <Gallery data={content.gallery} />
+          <Gifts data={content.gifts} />
           <BonusChoice data={content.bonus} />
           <Closing data={content.closing} />
         </div>
