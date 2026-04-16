@@ -276,8 +276,7 @@ export const content = {
   gifts: [
     {
       id: "gift1",
-      // ⬇ Reemplazá con la foto del producto de Amazon cuando quieras
-      src: "https://picsum.photos/seed/soporte-mac-regalo/480/640",
+      src: "/gifts/stand-computadora.png",
       alt: "Soporte para Mac",
       title: "Algo para tu escritorio",
       description: "Un soporte para tu Mac. Para que todo tenga su lugar.",
@@ -285,8 +284,7 @@ export const content = {
     },
     {
       id: "gift2",
-      // ⬇ Foto de flores blancas — reemplazá si tenés una mejor
-      src: "https://picsum.photos/seed/flores-blancas-ramo/480/640",
+      src: "/gifts/flores.png",
       alt: "Ramo de flores blancas",
       title: "Flores para vos",
       description: "Porque hay cosas que no necesitan mucha explicación.",
