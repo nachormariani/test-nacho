@@ -79,6 +79,7 @@ export interface GiftItem {
   title: string;
   description: string;
   tag: string;      // Etiqueta visual (ej: "Ya lo tenés", "Hoy", "Este domingo")
+  href?: string;
 }
 
 // ============================================================
@@ -505,6 +506,7 @@ export const content = {
       title: "Algo para tu escritorio",
       description: "Un soporte para tu Mac. Para que todo tenga su lugar.",
       tag: "Está en el bolso",
+      href: "https://www.amazon.es/dp/B0DJ2VNBSP?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1",
     },
     {
       id: "gift2",
@@ -522,6 +524,7 @@ export const content = {
       description:
         "A comer a una parrilla argentina en la sierra. Los dos, tranquilos, sin apuro.",
       tag: "Este domingo",
+      href: "https://asadorargentinoelmirador.es",
     },
   ] as GiftItem[],
 

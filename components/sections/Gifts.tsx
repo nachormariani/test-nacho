@@ -10,6 +10,55 @@ interface Props {
   data: GiftItem[];
 }
 
+function GiftCardContent({ gift }: { gift: GiftItem }) {
+  return (
+    <>
+      {/* Image area */}
+      <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/3" }}>
+        <Image
+          src={gift.src}
+          alt={gift.alt}
+          fill
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 33vw"
+          unoptimized={gift.src.startsWith("https://picsum")}
+        />
+        {/* Tag badge */}
+        <div className="absolute top-4 left-4 z-10">
+          <span
+            className="font-sans font-light tracking-widest uppercase px-3 py-1.5 rounded-full"
+            style={{
+              fontSize: "0.58rem",
+              letterSpacing: "0.18em",
+              background: "rgba(31,28,24,0.72)",
+              color: "#d8c76a",
+              backdropFilter: "blur(6px)",
+            }}
+          >
+            {gift.tag}
+          </span>
+        </div>
+      </div>
+
+      {/* Text */}
+      <div className="flex flex-col flex-1 p-6 md:p-7">
+        <h3
+          className="font-serif text-cream mb-2 leading-tight"
+          style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.25rem)" }}
+        >
+          {gift.title}
+        </h3>
+        <p
+          className="font-sans font-light text-cream-muted leading-relaxed"
+          style={{ fontSize: "0.875rem" }}
+        >
+          {gift.description}
+        </p>
+      </div>
+    </>
+  );
+}
+
 export function Gifts({ data }: Props) {
   return (
     <section className="px-6 py-28 md:py-36 relative overflow-hidden">
@@ -65,48 +114,19 @@ export function Gifts({ data }: Props) {
                 boxShadow: "0 24px 64px rgba(31,28,24,0.10)",
               }}
             >
-              {/* Image area */}
-              <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                <Image
-                  src={gift.src}
-                  alt={gift.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  unoptimized={gift.src.startsWith("https://picsum")}
-                />
-                {/* Tag badge */}
-                <div className="absolute top-4 left-4 z-10">
-                  <span
-                    className="font-sans font-light tracking-widest uppercase px-3 py-1.5 rounded-full"
-                    style={{
-                      fontSize: "0.58rem",
-                      letterSpacing: "0.18em",
-                      background: "rgba(31,28,24,0.72)",
-                      color: "#d8c76a",
-                      backdropFilter: "blur(6px)",
-                    }}
-                  >
-                    {gift.tag}
-                  </span>
-                </div>
-              </div>
-
-              {/* Text */}
-              <div className="flex flex-col flex-1 p-6 md:p-7">
-                <h3
-                  className="font-serif text-cream mb-2 leading-tight"
-                  style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.25rem)" }}
+              {gift.href ? (
+                <a
+                  href={gift.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Abrir ${gift.title} en una nueva pestaña`}
+                  className="flex flex-1 flex-col"
                 >
-                  {gift.title}
-                </h3>
-                <p
-                  className="font-sans font-light text-cream-muted leading-relaxed"
-                  style={{ fontSize: "0.875rem" }}
-                >
-                  {gift.description}
-                </p>
-              </div>
+                  <GiftCardContent gift={gift} />
+                </a>
+              ) : (
+                <GiftCardContent gift={gift} />
+              )}
             </motion.div>
           ))}
         </SectionWrapper>
