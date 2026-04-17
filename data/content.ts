@@ -97,7 +97,7 @@ export const content = {
 
   intro: {
     paragraph:
-      "No quería caer con un regalo y listo. Me dieron ganas de armarte algo un poco más tuyo, con recuerdos, planes y alguna sorpresa para elegir. Nada demasiado solemne: simplemente algo pensado para vos, porque te lo merecés.",
+      "No quería caer con un regalo y listo. Me dieron ganas de armarte algo un poco más tuyo, con recuerdos, planes y alguna sorpresa para elegir. Nada demasiado solemne: simplemente algo pensado para vos!",
   } as IntroContent,
 
   gallery: [
@@ -513,7 +513,8 @@ export const content = {
       src: "/gifts/flores.png",
       alt: "Ramo de flores blancas",
       title: "Flores para vos",
-      description: "Porque hay cosas que no necesitan mucha explicación.",
+      description:
+        "Porque hay cosas que no necesitan mucha explicación. Y también unas plantitas para la casa.",
       tag: "Para hoy",
     },
     {
