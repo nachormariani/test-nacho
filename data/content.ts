@@ -97,7 +97,7 @@ export const content = {
 
   intro: {
     paragraph:
-      "No quería solo comprarte una cosa y ya. Quería hacer algo que se sintiera pensado de verdad, algo tuyo. Esta página es parte de esa sorpresa: recuerdos, planes y al final una última cosa que podés elegir vos. Porque sos de las personas que merecen que se les preste atención.",
+      "No quería caer con un regalo y listo. Me dieron ganas de armarte algo un poco más tuyo, con recuerdos, planes y alguna sorpresa para elegir. Nada demasiado solemne: simplemente algo pensado para vos, porque te lo merecés.",
   } as IntroContent,
 
   gallery: [
