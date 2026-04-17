@@ -586,6 +586,12 @@ export const content = {
       confirmMessage: "Una noche afuera, bien. Ya vamos a elegir qué.",
       subItems: [
         {
+          id: "el-kuelgue",
+          src: "",
+          alt: "El Kuelgue",
+          label: "El Kuelgue",
+        },
+        {
           id: "badbunny",
           src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Bad_Bunny_2019_2.jpg/200px-Bad_Bunny_2019_2.jpg",
           alt: "Bad Bunny",
