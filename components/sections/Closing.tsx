@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
+import { FinalPhoto } from "@/components/sections/FinalPhoto";
 import { fadeInUp, fadeIn } from "@/lib/variants";
 import type { ClosingContent } from "@/data/content";
 
@@ -11,7 +12,7 @@ interface Props {
 
 export function Closing({ data }: Props) {
   return (
-    <section className="px-6 py-40 md:py-56">
+    <section className="relative px-6 pb-24 pt-40 md:pb-32 md:pt-56">
       {/* Top divider */}
       <motion.div
         className="w-px h-16 bg-gradient-to-b from-transparent via-gold/30 to-transparent mx-auto mb-20"
@@ -49,6 +50,8 @@ export function Closing({ data }: Props) {
             {data.signature}
           </span>
         </motion.div>
+
+        <FinalPhoto />
       </SectionWrapper>
 
       {/* Bottom subtle gradient */}
