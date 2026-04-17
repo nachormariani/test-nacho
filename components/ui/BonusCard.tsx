@@ -1,7 +1,12 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import {
+  Music2,
+  ShoppingBag,
+  Watch,
+  type LucideIcon,
+} from "lucide-react";
 import type { BonusOption } from "@/data/content";
 
 interface Props {
@@ -12,6 +17,12 @@ interface Props {
   onSelect: () => void;
 }
 
+const optionIcons: Record<string, LucideIcon> = {
+  b1: ShoppingBag,
+  b2: Music2,
+  b3: Watch,
+};
+
 export function BonusCard({
   option,
   isSelected,
@@ -19,6 +30,8 @@ export function BonusCard({
   isConfirmed,
   onSelect,
 }: Props) {
+  const ItemIcon = optionIcons[option.id] ?? ShoppingBag;
+
   return (
     <motion.div
       layout
@@ -46,35 +59,37 @@ export function BonusCard({
         onClick={onSelect}
         whileTap={{ scale: 0.99 }}
       >
-        {/* Sub-items image strip */}
+        {/* Sub-items strip */}
         {option.subItems && option.subItems.length > 0 && (
           <div
-            className="flex items-center justify-start gap-3 px-5 pt-5 pb-3 overflow-x-auto no-scrollbar"
+            className="flex items-center justify-start gap-2 px-5 pt-5 pb-3 overflow-x-auto no-scrollbar"
             style={{ scrollbarWidth: "none" }}
           >
             {option.subItems.map((item) => (
               <div
                 key={item.id}
-                className="flex-shrink-0 flex flex-col items-center gap-1.5"
+                className="flex-shrink-0 inline-flex items-center gap-1.5 rounded-full px-3 py-2"
+                style={{
+                  background: "rgba(255,255,255,0.56)",
+                  border: "1px solid rgba(31,28,24,0.08)",
+                  boxShadow: "0 8px 20px rgba(31,28,24,0.04)",
+                }}
               >
-                <div
-                  className="relative rounded-full overflow-hidden bg-white flex items-center justify-center"
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    border: "1px solid rgba(31,28,24,0.08)",
-                    flexShrink: 0,
-                  }}
+                <ItemIcon
+                  className="h-3.5 w-3.5 flex-shrink-0"
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                  style={{ color: "rgba(139,107,77,0.72)" }}
+                />
+                <span
+                  className="font-sans font-light text-cream-muted whitespace-nowrap"
+                  style={{ fontSize: "0.68rem", letterSpacing: "0.02em" }}
                 >
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    className="object-contain p-1.5"
-                    sizes="40px"
-                    unoptimized
-                  />
-                </div>
+                  {item.label}
+                </span>
+                <span className="sr-only">
+                  {item.alt}
+                </span>
               </div>
             ))}
           </div>
