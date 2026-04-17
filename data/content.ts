@@ -516,8 +516,7 @@ export const content = {
     },
     {
       id: "gift3",
-      // ⬇ Foto de parrilla / sierra — reemplazá si querés
-      src: "https://picsum.photos/seed/parrilla-argentina-sierra/640/480",
+      src: "/gifts/parrilla-sierra.png",
       alt: "Parrilla argentina en la sierra",
       title: "Una escapada el domingo",
       description:
